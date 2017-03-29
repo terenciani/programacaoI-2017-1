@@ -31,12 +31,38 @@ public class Calculadora {
         
         System.out.println("Digite o segundo operando");
         segundoOperando = scan.nextDouble();
-        resultado=0;
+        
+        resultado = calcular(primeiroOperando, operacao, segundoOperando);
+         
+        Calculadora calc = new Calculadora();
+        calc.impressaoDeResultado(resultado);
+          
+    }
+    
+    public static double calcular(double primeiroOperando,
+            String operacao, double segundoOperando){
+        double resultado=0;
+        
         if (operacao.equals("+")){
             resultado = primeiroOperando + segundoOperando;
         }
-        System.out.println(resultado);
+        if (operacao.equals("-")){
+            resultado = primeiroOperando - segundoOperando;
+        }
+        if (operacao.equals("*")){
+            resultado = primeiroOperando * segundoOperando;
+        }
+        if (operacao.equals("/")){
+            resultado = primeiroOperando / segundoOperando;
+        }
         
+        return resultado;
+    }
+    
+    public void impressaoDeResultado(double resultado) {
+        System.out.println("****************************");
+        System.out.println("|O Resutaldo é: " + resultado +"|");
+        System.out.println("****************************");
         
     }
     
