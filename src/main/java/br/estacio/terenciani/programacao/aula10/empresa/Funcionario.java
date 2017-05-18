@@ -5,6 +5,8 @@
  */
 package br.estacio.terenciani.programacao.aula10.empresa;
 
+import java.util.Objects;
+
 /**
  *
  * @author Marcelo
@@ -49,6 +51,36 @@ public class Funcionario {
     @Override
     public String toString() {
         return "Nome=" + nome + "(" + cargo + ") - " + nomeSuperior ;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Funcionario other = (Funcionario) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        if (!Objects.equals(this.cargo, other.cargo)) {
+            return false;
+        }
+        if (!Objects.equals(this.nomeSuperior, other.nomeSuperior)) {
+            return false;
+        }
+        return true;
     }
 
     

@@ -16,7 +16,7 @@ public class Empresa {
     
     public void listarFunciarios(){
         Funcionario funcionario;
-        for (int i=0;i<vetorDeFuncionarios.length;i++){
+        for (int i=0;i<contadorDeFuncionarios;i++){
             funcionario = vetorDeFuncionarios[i];
             if (funcionario != null)
                 System.out.println(funcionario.toString());
@@ -31,6 +31,27 @@ public class Empresa {
         }else{
             System.out.println("Funcionario Não Cadastrados");
         }
+    }
+    public boolean excluirFuncionario(Funcionario funcionario){
+        
+        int posicao = retornaPosicaoDoFuncionario(funcionario);
+        
+        if (posicao != -1){
+            vetorDeFuncionarios[posicao] = vetorDeFuncionarios[contadorDeFuncionarios-1];
+            vetorDeFuncionarios[contadorDeFuncionarios] = null;
+            contadorDeFuncionarios--;
+            return true;
+        }
+        
+        return false;
+    }
+    public int retornaPosicaoDoFuncionario(Funcionario funcionario){
+        
+        for (int i=0;i<contadorDeFuncionarios;i++){
+            if (vetorDeFuncionarios[i].equals(funcionario))
+                return i;
+        }
+        return -1;
     }
 }
 

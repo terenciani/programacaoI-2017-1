@@ -26,6 +26,13 @@ public class TestaEmpresa {
         Empresa terensaCode = new Empresa();
         
         terensaCode.cadastrarFuncionario(func1);
+        terensaCode.cadastrarFuncionario(func2);
+        
+        terensaCode.listarFunciarios();
+        
+        terensaCode.excluirFuncionario(func1);
+        
+        System.out.println("Apos exclusao");
         
         terensaCode.listarFunciarios();
         
