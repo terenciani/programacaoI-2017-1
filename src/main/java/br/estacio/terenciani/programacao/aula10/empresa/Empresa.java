@@ -9,7 +9,7 @@ package br.estacio.terenciani.programacao.aula10.empresa;
  *
  * @author Marcelo
  */
-public class Empresa {
+class Empresa {
     private Funcionario[] vetorDeFuncionarios = new Funcionario[50];
     private int contadorDeFuncionarios = 0;
     
